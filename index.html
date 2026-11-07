@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un regalo para ti ❤️</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    
+<!-- PANTALLA DE BIENVENIDA -->
+<section id="inicio" class="pantalla-inicio">
+
+    <div class="telarana"></div>
+
+    <div class="bienvenida">
+
+        <p class="pequeno">
+            🕷️ UNA MISIÓN MUY ESPECIAL 🕷️
+        </p>
+
+        <h1>
+            ¡Feliz cumpleaños,<br>
+            mi cielito! <span>❤️</span>
+        </h1>
+
+        <div class="imagen-hero">
+            <img src="img/spiderman1.png"
+                 alt="Spider-Man"
+                 class="spiderman-inicio">
+        </div>
+
+        <p class="subtitulo">
+            Hay muchos héroes en el mundo,<br>
+            pero hoy el protagonista eres tú.
+        </p>
+
+        <p class="mensaje-inicio">
+            Preparé algo especial para celebrar tu existencia.
+            Espero que te guste tanto como a mí prepararlo.
+        </p>
+
+        <button class="btn-principal" onclick="entrar()">
+            DESCUBRIR MI REGALO <span>🕸️</span>
+        </button>
+
+        <p class="firma-inicio">
+            WITH LOVE, FROM YOUR FAVORITE PERSON ❤️
+        </p>
+
+    </div>
+
+    <div class="decoracion">🕸️</div>
+
+</section>
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="contenido" class="contenido oculto">
+
+        <header class="encabezado">
+            <p class="etiqueta">UNA PEQUEÑA SORPRESA VIRTUAL PARA TI</p>
+
+            <h1>¡Feliz cumpleaños, mi amor!</h1>
+
+            <p>
+                Preparé cuatro pequeños regalos virtuales que quiero compartir contigo.
+            </p>
+
+            <div class="separador">🕷️ 💙 🕸️</div>
+        </header>
+
+
+        <!-- CUATRO BOTONES -->
+        <section class="contenedor-regalos">
+
+            <div class="tarjeta" onclick="abrirSeccion('enamore')">
+                <img src="img/spiderman2.png" alt="Spider-Man">
+                <h2>01</h2>
+                <h3>Razones por las que me enamoré de ti</h3>
+                <p>Pequeñas cosas que hicieron que te quisiera tanto.</p>
+                <button>Descubrir ❤️</button>
+            </div>
+
+
+            <div class="tarjeta" onclick="abrirSeccion('canciones')">
+                <img src="img/spiderman2.png" alt="Spider-Man">
+                <h2>02</h2>
+                <h3>Canciones que te dedico</h3>
+                <p>Porque hay canciones que me recuerdan a ti.</p>
+                <button>Escuchar 🎵</button>
+            </div>
+
+
+            <div class="tarjeta" onclick="abrirSeccion('importas')">
+                <img src="img/spiderman2.png" alt="Spider-Man">
+                <h2>03</h2>
+                <h3>Razones por las que me importas</h3>
+                <p>Todo aquello que hace que seas especial para mí.</p>
+                <button>Leer ❤️</button>
+            </div>
+
+
+            <div class="tarjeta" onclick="abrirSeccion('carta')">
+                <img src="img/spiderman2.png" alt="Spider-Man">
+                <h2>04</h2>
+                <h3>Una carta para ti</h3>
+                <p>Unas palabras que quiero que guardes en tu corazón.</p>
+                <button>Abrir carta 💌</button>
+            </div>
+
+        </section>
+
+        <footer>
+            Hecho con mucho amor para ti. ❤️
+            <br>
+            <span>Tu persona favorita 🕷️</span>
+        </footer>
+
+    </main>
+
+
+    <!-- VENTANA DONDE APARECE CADA REGALO -->
+    <div id="ventana" class="ventana">
+
+        <div class="contenido-ventana">
+
+            <button class="cerrar" onclick="cerrarSeccion()">×</button>
+
+            <div id="contenido-dinamico"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

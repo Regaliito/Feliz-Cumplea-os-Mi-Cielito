@@ -1,0 +1,1800 @@
+
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #080d1b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.oculto {
+    display: none !important;
+}
+
+
+/* ==========================================
+   PANTALLA DE BIENVENIDA
+   SPIDER-MAN EDITION
+========================================== */
+
+.pantalla-inicio {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(31, 75, 135, 0.65),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 0% 100%,
+            rgba(210, 35, 48, 0.45),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #080d1b,
+            #111d35 55%,
+            #080d1b
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+    padding: 35px 20px;
+    isolation: isolate;
+}
+
+/* Textura de cómic */
+
+.pantalla-inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: radial-gradient(
+        rgba(255,255,255,0.13) 1px,
+        transparent 1.5px
+    );
+
+    background-size: 18px 18px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Iluminación decorativa */
+
+.pantalla-inicio::after {
+    content: "";
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+    background: rgba(220, 35, 55, 0.13);
+    filter: blur(90px);
+
+    right: -180px;
+    top: -160px;
+    z-index: -1;
+}
+
+/* Telaraña */
+
+.telarana {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 260px;
+    height: 260px;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg at 0% 0%,
+            transparent 0deg 9deg,
+            rgba(255,255,255,0.35) 9.5deg 10deg,
+            transparent 10.5deg 18deg
+        ),
+        repeating-radial-gradient(
+            circle at 0% 0%,
+            transparent 0 28px,
+            rgba(255,255,255,0.25) 29px 30px,
+            transparent 31px 45px
+        );
+
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.bienvenida {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Texto superior */
+
+.pequeno {
+    color: #ff5966;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 22px;
+
+    text-shadow: 0 0 15px rgba(255, 55, 75, 0.5);
+}
+
+/* Título */
+
+.bienvenida h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(38px, 7vw, 65px);
+    color: #ffffff;
+
+    text-shadow:
+        3px 4px 0 #b51e32,
+        0 0 25px rgba(255,255,255,0.2);
+
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.bienvenida h1 span {
+    color: #ff4359;
+    display: inline-block;
+    animation: latido 1.5s infinite;
+}
+
+/* Imagen Spider-Man */
+
+.imagen-hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+}
+
+.spiderman-inicio {
+    width: 210px;
+    height: 210px;
+
+    object-fit: contain;
+    display: block;
+
+    filter: drop-shadow(0 12px 18px rgba(0,0,0,0.5));
+
+    animation: flotar 3s ease-in-out infinite;
+}
+
+/* Textos */
+
+.subtitulo {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+.mensaje-inicio {
+    color: #c8d3e7;
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin: 12px auto 25px;
+    max-width: 480px;
+}
+
+/* Botón principal */
+
+.btn-principal {
+    border: 2px solid #ff5262;
+
+    background: linear-gradient(
+        135deg,
+        #e52d43,
+        #b71934
+    );
+
+    color: white;
+    padding: 16px 32px;
+
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 5px 20px rgba(226, 35, 60, 0.3);
+}
+
+.btn-principal:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    background: linear-gradient(
+        135deg,
+        #ff465c,
+        #d21e39
+    );
+
+    box-shadow: 0 8px 28px rgba(226, 35, 60, 0.5);
+}
+
+/* Firma */
+
+.firma-inicio {
+    color: #8298bd;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+/* Decoración */
+
+.decoracion {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+
+    font-size: 65px;
+    opacity: 0.8;
+
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+   SPIDER-MAN EDITION
+========================================== */
+
+.contenido {
+    min-height: 100vh;
+    padding: 55px 7%;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(35, 75, 130, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(190, 30, 50, 0.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #080d1b,
+            #111d35 55%,
+            #080d1b
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Textura de cómic */
+
+.contenido::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: radial-gradient(
+        rgba(255,255,255,0.12) 1px,
+        transparent 1.5px
+    );
+
+    background-size: 18px 18px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Mantener contenido sobre el fondo */
+
+.contenido > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.encabezado .etiqueta {
+    color: #ff5966;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+
+    text-shadow: 0 0 12px rgba(255, 50, 70, 0.4);
+}
+
+.encabezado h1 {
+    color: #ffffff;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 900;
+
+    text-shadow:
+        3px 4px 0 #b51e32,
+        0 0 20px rgba(255,255,255,0.15);
+}
+
+.encabezado p:not(.etiqueta) {
+    color: #c5d0e2;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.separador {
+    margin-top: 22px;
+    font-size: 25px;
+    letter-spacing: 8px;
+}
+
+
+/* ==========================================
+   TARJETAS DE LOS CUATRO REGALOS
+========================================== */
+
+.contenedor-regalos {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.tarjeta {
+    background: linear-gradient(
+        145deg,
+        #172642,
+        #101a30
+    );
+
+    padding: 32px 28px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    border: 1px solid rgba(130, 160, 205, 0.30);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.30),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    /* Animación de entrada */
+
+    opacity: 1;
+
+    animation:
+        aparecerComic 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)
+        backwards;
+}
+
+/* Retraso de cada tarjeta */
+
+.tarjeta:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.tarjeta:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.tarjeta:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.tarjeta:nth-child(4) {
+    animation-delay: 0.95s;
+}
+
+/* Línea superior de color */
+
+.tarjeta {
+    border-top: 4px solid #ff5262;
+}
+
+/* Efecto POW del cómic */
+
+.tarjeta::before {
+    content: "POW!";
+
+    position: absolute;
+    top: 15px;
+    right: -70px;
+
+    background: #ffcc36;
+    color: #d83222;
+
+    padding: 8px 35px;
+
+    font-weight: 900;
+    transform: rotate(35deg);
+
+    opacity: 0;
+    transition: 0.3s;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tarjeta:hover::before {
+    opacity: 1;
+    right: -30px;
+}
+
+/* Brillo de las tarjetas */
+
+.tarjeta::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    pointer-events: none;
+
+    animation: brilloComic 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes brilloComic {
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 160%;
+    }
+}
+
+/* Hover de las tarjetas */
+
+.tarjeta:hover {
+    transform: translateY(-9px) scale(1.015);
+
+    border-color: #e83b50;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.45),
+        0 0 20px rgba(225, 40, 60, 0.15);
+}
+
+/* Imágenes */
+
+.tarjeta img {
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.35));
+
+    transition: transform 0.4s ease;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.10) rotate(-3deg);
+}
+
+/* Número del regalo */
+
+.tarjeta h2 {
+    color: #ff6574;
+    font-size: 13px;
+    margin: 15px 0;
+    letter-spacing: 4px;
+}
+
+/* Título del regalo */
+
+.tarjeta h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+/* Descripción */
+
+.tarjeta p {
+    color: #bdc9dc;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+/* Botones de los regalos */
+
+.tarjeta button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background: linear-gradient(
+        135deg,
+        #ed354b,
+        #b91e36
+    );
+
+    border: 1px solid #ff6675;
+    border-radius: 8px;
+
+    padding: 13px 30px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(220, 35, 55, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* Brillo del botón */
+
+.tarjeta button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        110deg,
+        transparent 20%,
+        rgba(255,255,255,0.3) 50%,
+        transparent 80%
+    );
+
+    transform: translateX(-120%);
+    transition: transform 0.5s ease;
+
+    z-index: -1;
+}
+
+.tarjeta button:hover::before {
+    transform: translateX(120%);
+}
+
+/* Hover del botón */
+
+.tarjeta button:hover {
+    transform: translateY(-4px) scale(1.06);
+
+    background: linear-gradient(
+        135deg,
+        #ff5265,
+        #d52240
+    );
+
+    box-shadow:
+        0 8px 22px rgba(220, 35, 55, 0.45),
+        0 0 12px rgba(255, 70, 90, 0.25);
+}
+
+/* Al presionar */
+
+.tarjeta button:active {
+    transform: scale(0.94);
+    box-shadow: 0 2px 7px rgba(220, 35, 55, 0.3);
+}
+
+.tarjeta button:focus-visible {
+    outline: 3px solid #7ebcff;
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   VENTANAS EMERGENTES
+   DISEÑO SPIDER-MAN
+========================================== */
+
+.ventana {
+    display: none;
+
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+
+    background: rgba(3, 7, 18, 0.88);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    backdrop-filter: blur(5px);
+}
+
+.ventana.activa {
+    display: flex;
+}
+
+/* Panel principal */
+
+.contenido-ventana {
+    background: linear-gradient(
+        145deg,
+        #172642,
+        #0d1629
+    );
+
+    width: 100%;
+    max-width: 800px;
+
+    max-height: 85vh;
+    overflow-y: auto;
+
+    padding: 40px;
+
+    border: 3px solid #e83b50;
+    border-radius: 18px;
+
+    position: relative;
+
+    box-shadow:
+        0 0 0 4px rgba(255,255,255,0.08),
+        0 0 35px rgba(220, 35, 55, 0.25);
+
+    animation: efectoComic 0.45s ease;
+}
+
+/* Barra de desplazamiento */
+
+.contenido-ventana::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contenido-ventana::-webkit-scrollbar-track {
+    background: #101a30;
+    border-radius: 10px;
+}
+
+.contenido-ventana::-webkit-scrollbar-thumb {
+    background: #c52a43;
+    border-radius: 10px;
+}
+
+/* Botón cerrar */
+
+.cerrar {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+
+    border: 1px solid #ff7180;
+
+    background: #c5223c;
+    color: white;
+
+    font-size: 25px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.cerrar:hover {
+    background: #ff4359;
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Título de las ventanas */
+
+.titulo-ventana {
+    text-align: center;
+
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+
+    margin: 10px 0 25px;
+
+    text-shadow: 2px 3px 0 #b51e32;
+}
+
+/* Animación de entrada */
+
+@keyframes efectoComic {
+    0% {
+        transform: scale(0.5) rotate(-8deg);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.05) rotate(2deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   TEXTOS ROMÁNTICOS
+========================================== */
+
+.texto-romantico {
+    background: #172642;
+
+    padding: 18px;
+    border-radius: 12px;
+
+    margin: 12px 0;
+
+    border-left: 5px solid #e83b50;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+    font-size: 16px;
+    color: #e3eaf5;
+}
+
+.texto-romantico p {
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   CANCIONES
+========================================== */
+
+.cancion {
+    background: #172642;
+
+    padding: 18px;
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    border: 1px solid rgba(130,160,205,0.2);
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.cancion img {
+    width: 85px;
+    height: 85px;
+
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.cancion h3,
+.cancion-bloque h3 {
+    color: #ff6574;
+    margin-bottom: 5px;
+}
+
+.cancion a {
+    display: inline-block;
+
+    color: #ff6574;
+    margin-top: 8px;
+
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.cancion a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.cancion-bloque {
+    background: #172642;
+
+    padding: 20px;
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(130,160,205,0.2);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.cancion-bloque p {
+    color: #bdc9dc;
+    margin-bottom: 15px;
+}
+
+/* Reproductor */
+
+.reproductor {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.reproductor iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* ==========================================
+   CARTA
+========================================== */
+
+.carta {
+    background: #fdf7f9;
+
+    color: #684454;
+
+    padding: 35px;
+    border-radius: 12px;
+
+    line-height: 2;
+    font-size: 16px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.carta h2 {
+    font-family: 'Pacifico', cursive;
+
+    color: #bd5876;
+    text-align: center;
+
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.carta p {
+    margin-bottom: 17px;
+    text-align: justify;
+}
+
+.firma {
+    text-align: right;
+
+    color: #bd5876;
+
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+
+    margin-top: 25px;
+}
+
+
+/* ==========================================
+   SOBRE DE LA CARTA
+========================================== */
+
+.sobre-contenedor {
+    text-align: center;
+}
+
+.sobre {
+    width: 220px;
+    height: 150px;
+
+    background: #c5223c;
+
+    margin: 50px auto 25px;
+
+    position: relative;
+    border-radius: 8px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.sobre-cuerpo {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 55px;
+    z-index: 2;
+}
+
+.sobre-solapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 110px solid transparent;
+    border-right: 110px solid transparent;
+    border-top: 85px solid #ff5265;
+
+    transform-origin: top;
+    transition: transform 0.6s;
+
+    z-index: 3;
+}
+
+.sobre-abierto .sobre-solapa {
+    transform: rotateX(180deg);
+}
+
+.mensaje-sobre {
+    color: #bdc9dc;
+    margin-bottom: 25px;
+}
+
+.animacion-carta {
+    animation: aparecerCarta 1s ease;
+}
+
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   HISTORIA INTERACTIVA
+========================================== */
+
+.historia {
+    max-width: 650px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.historia-etiqueta {
+    color: #ff6574;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+/* Barra de progreso */
+
+.progreso-contenedor {
+    margin: 25px 0;
+}
+
+.progreso-texto {
+    display: flex;
+    justify-content: space-between;
+
+    color: #ff6574;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+.progreso-fondo {
+    height: 9px;
+
+    background: #263652;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progreso-barra {
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #c5223c,
+        #ff6574,
+        #327ac5
+    );
+
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+
+/* ==========================================
+   TARJETA DEL RECUERDO
+========================================== */
+
+.tarjeta-recuerdo {
+    background: linear-gradient(
+        145deg,
+        #172642,
+        #101a30
+    );
+
+    border: 2px solid rgba(130,160,205,0.3);
+    border-radius: 22px;
+
+    padding: 40px 30px;
+    margin: 25px 0;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+    animation: aparecerRecuerdo 0.5s ease;
+}
+
+.decoracion-recuerdo {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-recuerdo h2 {
+    color: #ff6574;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.linea-decorativa {
+    color: #ff6574;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-recuerdo p {
+    color: #d2dced;
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    text-align: center;
+}
+
+.corazon-recuerdo {
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+
+/* ==========================================
+   BOTONES DE NAVEGACIÓN
+========================================== */
+
+.navegacion-recuerdos {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn-historia {
+    background: linear-gradient(
+        135deg,
+        #ed354b,
+        #b91e36
+    );
+
+    color: white;
+    border: 1px solid #ff6675;
+
+    padding: 13px 22px;
+    border-radius: 8px;
+
+    font-weight: 900;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-historia:hover {
+    background: #ff5265;
+    transform: translateY(-3px);
+}
+
+.btn-secundario {
+    background: #263652;
+    color: #dce6f5;
+
+    border: 1px solid #526c94;
+
+    padding: 13px 20px;
+    border-radius: 8px;
+
+    font-weight: 900;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-secundario:hover {
+    background: #344b70;
+}
+
+.btn-secundario:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   PANTALLA FINAL DE LA HISTORIA
+========================================== */
+
+.final-historia {
+    background: linear-gradient(
+        145deg,
+        #172642,
+        #101a30
+    );
+
+    border: 2px solid #e83b50;
+    padding: 40px 25px;
+
+    border-radius: 20px;
+    text-align: center;
+
+    animation: aparecerRecuerdo 0.6s ease;
+}
+
+.final-icono {
+    font-size: 65px;
+    margin-bottom: 20px;
+
+    animation: latido 1.5s infinite;
+}
+
+.final-historia h2 {
+    color: #ff6574;
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+.final-historia p {
+    color: #d2dced;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.frase-final {
+    font-family: 'Pacifico', cursive;
+    color: #ff6574 !important;
+    font-size: 19px;
+}
+
+
+/* ==========================================
+   RAZONES POR LAS QUE ME IMPORTAS
+   NOTITAS ROMÁNTICAS
+========================================== */
+
+.introduccion-importas {
+    text-align: center;
+
+    max-width: 480px;
+    margin: 15px auto 25px;
+
+    line-height: 1.7;
+    color: #bdc9dc;
+}
+
+/* Notita */
+
+.nota-importas {
+    position: relative;
+    overflow: visible;
+
+    background: linear-gradient(
+        145deg,
+        #fffafd,
+        #ffeaf2,
+        #fff5f8
+    );
+
+    border: 1px solid #f4c5d7;
+    border-radius: 15px;
+
+    padding: 35px 28px;
+    margin: 25px auto;
+
+    max-width: 520px;
+    min-height: 210px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(190,90,130,0.12),
+        0 2px 5px rgba(190,90,130,0.08);
+
+    transform: rotate(-0.5deg);
+
+    animation: aparecerNota 0.7s ease;
+}
+
+/* Corazón superior */
+
+.nota-importas::before {
+    content: "♡";
+
+    position: absolute;
+    top: -18px;
+    right: 20px;
+
+    color: #ec8eaf;
+    font-size: 38px;
+
+    animation: flotarCorazon 3s ease-in-out infinite;
+}
+
+/* Corazón inferior */
+
+.nota-importas::after {
+    content: "♥";
+
+    position: absolute;
+    bottom: -15px;
+    left: 18px;
+
+    color: #f3a9c2;
+    font-size: 24px;
+
+    animation: flotarCorazon 3.5s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.nota-decoracion {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.nota-etiqueta {
+    color: #c66d91;
+
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.nota-texto {
+    color: #684454;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    text-align: center;
+    margin: 25px 0;
+}
+
+.nota-corazon {
+    color: #e889aa;
+
+    font-size: 28px;
+    text-align: center;
+
+    animation: latido 1.5s ease-in-out infinite;
+}
+
+
+/* ==========================================
+   PANTALLA FINAL - IMPORTAS
+========================================== */
+
+.final-importas {
+    background: linear-gradient(
+        145deg,
+        #fff8fb,
+        #fce4ed,
+        #fff2f7
+    );
+
+    border: 1px solid #efbfd1;
+    border-radius: 20px;
+
+    padding: 35px 25px;
+
+    box-shadow: 0 8px 25px rgba(190,90,130,0.15);
+
+    text-align: center;
+
+    animation: aparecerNota 1s ease;
+}
+
+.final-importas .final-icono {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.final-importas h2 {
+    color: #bd6488;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.final-importas h3 {
+    color: #a94e75;
+    margin: 20px 0;
+}
+
+.final-importas p {
+    color: #684454;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin: 20px auto;
+    max-width: 550px;
+}
+
+.final-importas .frase-final {
+    color: #bd5876;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   CORAZONES FLOTANTES
+========================================== */
+
+.corazon-flotante {
+    position: fixed;
+
+    bottom: -40px;
+    z-index: 20;
+
+    pointer-events: none;
+
+    animation: subirCorazon linear forwards;
+}
+
+@keyframes subirCorazon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    text-align: center;
+    padding: 45px 10px 10px;
+
+    color: #ff6574;
+    font-weight: 800;
+}
+
+footer span {
+    font-size: 13px;
+    color: #8298bd;
+}
+
+
+/* ==========================================
+   ANIMACIONES GENERALES
+========================================== */
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerComic {
+    0% {
+        opacity: 0;
+        transform: translateY(45px) scale(0.85) rotate(-3deg);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.03) rotate(1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+@keyframes aparecerRecuerdo {
+    from {
+        opacity: 0;
+        transform: translateX(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes aparecerNota {
+    from {
+        opacity: 0;
+        transform: translateY(15px) rotate(-2deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-0.5deg);
+    }
+}
+
+@keyframes flotarCorazon {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-9px) rotate(10deg);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* ==========================================
+   DISEÑO RESPONSIVE - CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+
+    /* Bienvenida */
+
+    .pantalla-inicio {
+        padding: 25px 18px;
+    }
+
+    .spiderman-inicio {
+        width: 175px;
+        height: 175px;
+    }
+
+    .pequeno {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .mensaje-inicio {
+        font-size: 13px;
+    }
+
+    .btn-principal {
+        padding: 14px 20px;
+        font-size: 13px;
+    }
+
+    .decoracion {
+        font-size: 40px;
+        right: 12px;
+        bottom: 10px;
+    }
+
+    /* Contenido */
+
+    .contenido {
+        padding: 40px 18px;
+    }
+
+    .contenedor-regalos {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .encabezado {
+        margin-bottom: 35px;
+    }
+
+    .encabezado .etiqueta {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .tarjeta {
+        padding: 25px 18px;
+    }
+
+    .tarjeta img {
+        width: 125px;
+        height: 125px;
+    }
+
+    /* Ventanas */
+
+    .contenido-ventana {
+        padding: 35px 20px 25px;
+        max-height: 88vh;
+    }
+
+    .titulo-ventana {
+        font-size: 24px;
+    }
+
+    /* Canciones */
+
+    .cancion {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .cancion img {
+        width: 65px;
+        height: 65px;
+    }
+
+    /* Carta */
+
+    .carta {
+        padding: 22px;
+    }
+
+    /* Recuerdos */
+
+    .tarjeta-recuerdo {
+        padding: 30px 20px;
+    }
+
+    .tarjeta-recuerdo h2 {
+        font-size: 23px;
+    }
+
+    .navegacion-recuerdos {
+        flex-direction: column;
+    }
+
+    .navegacion-recuerdos button {
+        width: 100%;
+    }
+
+    .final-historia h2 {
+        font-size: 22px;
+    }
+
+    /* Notitas */
+
+    .nota-importas {
+        padding: 28px 18px;
+    }
+
+    .nota-texto {
+        font-size: 15px;
+    }
+
+    .final-importas {
+        padding: 28px 18px;
+    }
+}
+
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+
+    .tarjeta {
+        opacity: 1;
+    }
+
+}
+
+
+/* =================================
+   PLAYLIST DE CANCIONES
+================================= */
+
+.texto-canciones {
+    text-align: center;
+    color: #c6d4e8;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.lista-canciones {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cancion {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    background: linear-gradient(135deg, #111d35, #182945);
+    border: 1px solid #304767;
+    border-left: 4px solid #e52d43;
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+.cancion:hover {
+    transform: translateY(-3px);
+    border-color: #e52d43;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cancion img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #e52d43;
+    flex-shrink: 0;
+}
+
+.info-cancion {
+    flex: 1;
+    min-width: 0;
+}
+
+.numero-cancion {
+    color: #ff5262;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.info-cancion h3 {
+    color: white;
+    margin: 5px 0;
+}
+
+.info-cancion p {
+    color: #b8c8dc;
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+
+.info-cancion audio {
+    width: 100%;
+    height: 38px;
+    accent-color: #e52d43;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 500px) {
+
+    .cancion {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .cancion img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .info-cancion h3 {
+        font-size: 15px;
+    }
+
+    .info-cancion audio {
+        width: 100%;
+    }
+
+}
