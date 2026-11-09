@@ -1798,3 +1798,190 @@ footer span {
     }
 
 }
+
+/* =================================
+   DEDICATORIAS DE CANCIONES
+================================= */
+
+.dedicatoria-cancion {
+
+    margin: 18px 0;
+
+    padding: 18px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(229, 45, 67, 0.12),
+        rgba(17, 29, 53, 0.95)
+    );
+
+    border-left: 3px solid #e52d43;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.titulo-dedicatoria {
+
+    display: block;
+
+    color: #ff6978;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+}
+
+.dedicatoria-cancion p {
+
+    color: #e8e8ee;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin: 0;
+
+    font-style: italic;
+
+}
+
+/* ==========================================
+   PEQUEÑO ÁLBUM DE RECUERDOS
+========================================== */
+
+.album-recuerdos {
+    width: 100%;
+    max-width: 550px;
+    margin: 45px auto 30px;
+    padding: 28px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 29, 43, 0.98),
+            rgba(12, 16, 27, 0.98)
+        );
+
+    border: 1px solid rgba(210, 45, 65, 0.4);
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px rgba(190, 30, 50, 0.12),
+        inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.album-etiqueta {
+    color: #e64b5d;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.album-recuerdos h3 {
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    margin: 12px 0;
+}
+
+.album-introduccion {
+    color: #d0d0d0;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto 35px;
+}
+
+.fotos-adrian {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.foto-recuerdo {
+    width: 85%;
+    max-width: 350px;
+    padding: 10px 10px 18px;
+
+    background: #f5f0e9;
+    border-radius: 4px;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.4),
+        0 0 12px rgba(190, 30, 50, 0.15);
+
+    transition: transform 0.4s ease;
+}
+
+.foto-uno {
+    transform: rotate(-3deg);
+}
+
+.foto-dos {
+    transform: rotate(3deg);
+}
+
+.foto-recuerdo:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.foto-recuerdo img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.foto-recuerdo span {
+    display: block;
+    color: #333333;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    margin-top: 13px;
+}
+
+.frase-album {
+    color: #f2c6d4;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: center;
+    margin: 35px 5px 5px;
+}
+
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .album-recuerdos {
+        padding: 24px 12px;
+        margin-top: 35px;
+    }
+
+    .foto-recuerdo {
+        width: 90%;
+    }
+
+    .foto-recuerdo img {
+        height: 230px;
+    }
+
+}

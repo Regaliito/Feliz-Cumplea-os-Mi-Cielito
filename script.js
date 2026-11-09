@@ -206,45 +206,82 @@ function dibujarRecuerdo() {
 
         // FINAL DE LA HISTORIA DE ENAMORAMIENTO
 
-        contenedor.innerHTML = `
+       contenedor.innerHTML = `
 
-            <div class="final-historia">
+    <div class="final-historia">
 
-                <div class="final-icono">❤️</div>
+        <div class="final-icono">❤️</div>
 
-                <p class="historia-etiqueta">
-                    FIN DE NUESTROS RECUERDOS...
-                </p>
+        <p class="historia-etiqueta">
+            FIN DE NUESTROS RECUERDOS...
+        </p>
 
-                <h2>¿O APENAS EL COMIENZO?</h2>
+        <h2>¿O APENAS EL COMIENZO?</h2>
 
-                <p>
-                    Y aunque podría seguir enumerando
-                    mil razones más, creo que lo más bonito
-                    es que muchas de ellas todavía las
-                    seguimos construyendo juntos.
-                </p>
+        <p>
+            Y aunque podría seguir enumerando
+            mil razones más, creo que lo más bonito
+            es que muchas de ellas todavía las
+            seguimos construyendo juntos.
+        </p>
 
-                <p class="frase-final">
-                    Todavía nos quedan muchísimos
-                    recuerdos por crear. ❤️
-                </p>
+        <div class="album-recuerdos">
 
-                <button class="btn-historia"
-                    onclick="reiniciarRecuerdos()">
-                    Volver a leer nuestra historia ↻
-                </button>
+            <p class="album-etiqueta">
+                UN PEQUEÑO RECUERDO DE NOSOTROS 🕷️
+            </p>
 
-                <button class="btn-secundario"
-                    onclick="cerrarSeccion()">
-                    Volver a mis regalos
-                </button>
+            <h3>Un día contigo ❤️</h3>
+
+            <p class="album-introduccion">
+                Dos fotos que guardan un pedacito de un día
+                que me hizo feliz. Y ojalá sea uno de muchos.
+            </p>
+
+            <div class="fotos-adrian">
+
+                <div class="foto-recuerdo foto-uno">
+                    <img src="img/foto-adrian-1.jpeg"
+                         alt="Un recuerdo juntos">
+                    <span> Te amo ❤️</span>
+                </div>
+
+                <div class="foto-recuerdo foto-dos">
+                    <img src="img/foto-adrian-2.jpeg"
+                         alt="Otro recuerdo juntos">
+                    <span> Siempre quiero estar contigo 🥰</span>
+                </div>
 
             </div>
 
-        `;
+            <p class="frase-album">
+                Apenas estamos comenzando a escribir
+                nuestra historia. ❤️
+            </p>
 
-        return;
+        </div>
+
+        <p class="frase-final">
+            Todavía nos quedan muchísimos
+            recuerdos por crear. ❤️
+        </p>
+
+        <button class="btn-historia"
+            onclick="reiniciarRecuerdos()">
+            Volver a leer nuestra historia ↻
+        </button>
+
+        <button class="btn-secundario"
+            onclick="cerrarSeccion()">
+            Volver a mis regalos
+        </button>
+
+    </div>
+
+`;
+
+return;
+
     }
 
     const recuerdo = listaRecuerdos[recuerdoActual];
@@ -426,42 +463,46 @@ const razonesImportas = [
    CANCIONES QUE TE DEDICO
 ================================= */
 
-
 const canciones = [
 
     {
         nombre: "Creo en ti",
         artista: "Reik",
         imagen: "img/cancion1.jpg",
-        archivo: "./musica/cancion1.mp3"
+        archivo: "./musica/cancion1.mp3",
+        dedicatoria: "Mi amor, esta canción me recuerda lo bonito que ha sido conocerte. Gracias por llegar a mi vida, por hacerme sentir querida y por demostrarme que todavía existen personas con las que vale la pena construir cosas bonitas. Creo en vos y en todo lo lindo que podemos vivir juntos."
     },
 
     {
         nombre: "Todo cambió",
         artista: "Camila",
         imagen: "img/cancion2.jpg",
-        archivo: "./musica/cancion2.mp3"
+        archivo: "./musica/cancion2.mp3",
+        dedicatoria: "No sé en qué momento te convertiste en alguien tan importante para mí, pero sé que desde que llegaste muchas cosas cambiaron. Me encanta tenerte en mi vida, compartir mis días con vos y descubrir lo bonito que es quererte."
     },
 
     {
-        nombre: "Bendita tu luz",
-        artista: "Maná",
+        nombre: "El cielo te mandó para mí",
+        artista: "Ha-Ash",
         imagen: "img/cancion3.jpg",
-        archivo: "./musica/cancion3.mp3"
+        archivo: "./musica/cancion3.mp3",
+        dedicatoria: "A veces siento que llegaste a mi vida como uno de esos regalos bonitos que uno no sabe que necesita hasta que los recibe. Me encanta haberte encontrado y poder compartir contigo tantas cosas que me hacen feliz. Si pudiera volver a elegir, volvería a querer coincidir contigo."
     },
 
     {
         nombre: "Disfruto",
         artista: "Carla Morrison",
         imagen: "img/cancion4.jpg",
-        archivo: "./musica/cancion4.mp3"
+        archivo: "./musica/cancion4.mp3",
+        dedicatoria: "Disfruto cada abrazo, cada beso, cada conversación y cada instante a tu lado. Me gustan hasta esos momentos sencillos en los que no necesitamos hacer nada extraordinario para ser felices. Simplemente me gusta estar con vos."
     },
 
     {
-        nombre: "Te vi venir",
-        artista: "Sin Bandera",
+        nombre: "No hay nadie más",
+        artista: "Sebastián Yatra",
         imagen: "img/cancion5.jpg",
-        archivo: "./musica/cancion5.mp3"
+        archivo: "./musica/cancion5.mp3",
+        dedicatoria: "Quiero que sepas que deseo cuidarte incluso en esos días en los que todo parezca difícil, abrazarte cuando el mundo pese demasiado y amarte sin hacerte sentir que tenés que ser perfecto. Quiero estar para vos en los días bonitos, pero también en los complicados. No prometo que todo siempre será fácil, pero sí quiero que nunca te falten mis ganas de cuidarte, comprenderte y elegirte. Porque entre tantas personas, mi corazón te elige a vos."
     }
 
 ];
@@ -541,7 +582,6 @@ const carta = `
    FUNCIÓN PARA MOSTRAR CANCIONES
 ================================= */
 
-
 function mostrarCanciones() {
 
     let contenido = `
@@ -571,6 +611,14 @@ function mostrarCanciones() {
 
                     <h3>${cancion.nombre}</h3>
                     <p>${cancion.artista}</p>
+
+                    <div class="dedicatoria-cancion">
+                        <span class="titulo-dedicatoria">
+                            Una pequeña dedicatoria ❤️
+                        </span>
+
+                        <p>${cancion.dedicatoria}</p>
+                    </div>
 
                     <audio controls preload="metadata"
                         onplay="pausarOtrasCanciones(this)">
