@@ -1985,3 +1985,43 @@ footer span {
     }
 
 }
+
+/* ==========================================
+   REPRODUCTOR DE MÚSICA EN CELULARES
+========================================== */
+
+.cancion {
+    min-width: 0;
+}
+
+.info-cancion {
+    min-width: 0;
+    width: 100%;
+}
+
+.cancion audio {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+
+    .cancion {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .info-cancion {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .cancion audio {
+        width: 100%;
+        min-height: 45px;
+    }
+
+}
