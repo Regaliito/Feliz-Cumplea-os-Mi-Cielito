@@ -582,6 +582,7 @@ const carta = `
    FUNCIÓN PARA MOSTRAR CANCIONES
 ================================= */
 
+
 function mostrarCanciones() {
 
     let contenido = `
@@ -620,11 +621,49 @@ function mostrarCanciones() {
                         <p>${cancion.dedicatoria}</p>
                     </div>
 
-                    <audio controls preload="metadata"
-                        onplay="pausarOtrasCanciones(this)">
-                        <source src="${cancion.archivo}" type="audio/mpeg">
-                        Tu navegador no puede reproducir este audio.
-                    </audio>
+                    <div class="reproductor-personalizado">
+
+                        <audio class="audio-real" preload="metadata"
+                            onplay="pausarOtrasCanciones(this); actualizarBotonAudio(this)"
+                            onpause="actualizarBotonAudio(this)"
+                            onended="actualizarBotonAudio(this)"
+                            ontimeupdate="actualizarProgreso(this)"
+                            onloadedmetadata="actualizarDuracion(this)">
+
+                            <source src="${cancion.archivo}" type="audio/mpeg">
+                            Tu navegador no puede reproducir este audio.
+                        </audio>
+
+                        <div class="controles-audio">
+
+                            <button class="boton-play"
+                                onclick="alternarReproduccion(this)"
+                                aria-label="Reproducir canción">
+                                ▶
+                            </button>
+
+                            <div class="barra-y-tiempos">
+
+                                <div class="tiempos-audio">
+                                    <span class="tiempo-actual">0:00</span>
+                                    <span class="duracion-audio">0:00</span>
+                                </div>
+
+                                <input
+                                    type="range"
+                                    class="barra-progreso"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    step="0.1"
+                                    oninput="buscarEnCancion(this)"
+                                    aria-label="Progreso de la canción"
+                                >
+
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -635,6 +674,79 @@ function mostrarCanciones() {
 
     return contenido;
 }
+
+
+
+/* ==========================================
+   REPRODUCTOR PERSONALIZADO
+========================================== */
+
+function alternarReproduccion(boton) {
+
+    const reproductor = boton.closest(".reproductor-personalizado");
+    const audio = reproductor.querySelector(".audio-real");
+
+    if (audio.paused) {
+        pausarOtrasCanciones(audio);
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+function actualizarBotonAudio(audio) {
+
+    const reproductor = audio.closest(".reproductor-personalizado");
+    const boton = reproductor.querySelector(".boton-play");
+
+    boton.textContent = audio.paused ? "▶" : "Ⅱ";
+    boton.setAttribute(
+        "aria-label",
+        audio.paused ? "Reproducir canción" : "Pausar canción"
+    );
+}
+
+function actualizarProgreso(audio) {
+
+    const reproductor = audio.closest(".reproductor-personalizado");
+
+    const barra = reproductor.querySelector(".barra-progreso");
+    const tiempo = reproductor.querySelector(".tiempo-actual");
+
+    if (audio.duration) {
+        barra.value = (audio.currentTime / audio.duration) * 100;
+        tiempo.textContent = formatoTiempo(audio.currentTime);
+    }
+}
+
+function actualizarDuracion(audio) {
+
+    const reproductor = audio.closest(".reproductor-personalizado");
+    const duracion = reproductor.querySelector(".duracion-audio");
+
+    duracion.textContent = formatoTiempo(audio.duration);
+}
+
+function buscarEnCancion(barra) {
+
+    const reproductor = barra.closest(".reproductor-personalizado");
+    const audio = reproductor.querySelector(".audio-real");
+
+    if (audio.duration) {
+        audio.currentTime = (barra.value / 100) * audio.duration;
+    }
+}
+
+function formatoTiempo(segundos) {
+
+    if (!Number.isFinite(segundos)) return "0:00";
+
+    const minutos = Math.floor(segundos / 60);
+    const segundosRestantes = Math.floor(segundos % 60);
+
+    return `${minutos}:${String(segundosRestantes).padStart(2, "0")}`;
+}
+
 
 
 function pausarOtrasCanciones(audioActual) {
