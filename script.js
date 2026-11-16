@@ -252,6 +252,11 @@ function dibujarRecuerdo() {
                     <span> Siempre quiero estar contigo 🥰</span>
                 </div>
 
+                <div class="foto-recuerdo foto-tres">
+                    <img src="img/foto-adrian-3.jpeg" alt="Otro recuerdo juntos">
+                    <span> Gracias por todo ❤️</span>
+                </div>
+
             </div>
 
             <p class="frase-album">
