@@ -446,25 +446,25 @@ function reiniciarRecuerdos() {
 
 const razonesImportas = [
 
-    "Porque tu felicidad también es importante para mí. Me encanta verte sonreír y saber que estás bien. Ojalá nunca te falten motivos para sentirte feliz.",
+    "Tu felicidad también es importante para mí. Me encanta verte sonreír y saber que estás bien. Ojalá nunca te falten motivos para sentirte feliz.",
 
-    "Porque no quiero estar solamente en tus días bonitos. También quiero acompañarte cuando estés cansado, preocupado o cuando simplemente tengas un día difícil. No tienes que estar bien todo el tiempo conmigo.",
+    "No quiero estar solamente en tus días bonitos. También quiero acompañarte cuando estés cansado, preocupado o cuando simplemente tengas un día difícil. No tienes que estar bien todo el tiempo conmigo.",
 
-    "Porque quiero verte cumplir cada uno de tus sueños. Deseo que la vida te dé muchísimas oportunidades y que nunca pierdas esas ganas de hacer las cosas que te ilusionan.",
+    "Quiero verte cumplir cada uno de tus sueños. Deseo que la vida te dé muchísimas oportunidades y que nunca pierdas esas ganas de hacer las cosas que te ilusionan.",
 
-    "Porque me importa cómo te sientes, incluso cuando no encuentras las palabras para explicarlo. Quiero que siempre tengas la confianza de poder contarme lo que te pasa, sin miedo a ser juzgado.",
+    "Me importa cómo te sientes, incluso cuando no encuentras las palabras para explicarlo. Quiero que siempre tengas la confianza de poder contarme lo que te pasa, sin miedo a ser juzgado.",
 
-    "Porque admiro muchas cosas de ti, incluso algunas que quizás tú mismo no notas. Me gusta tu manera de ser, tu forma de tratarme y esos pequeños detalles que te hacen tan especial.",
+    "Admiro muchas cosas de ti, incluso algunas que quizás tú mismo no notas. Me gusta tu manera de ser, tu forma de tratarme y esos pequeños detalles que te hacen tan especial.",
 
-    "Porque disfruto muchísimo compartir mi tiempo contigo. No necesitamos hacer algo extraordinario para que un momento sea bonito; muchas veces basta con tenerte cerquita.",
+    "Disfruto muchísimo compartir mi tiempo contigo. No necesitamos hacer algo extraordinario para que un momento sea bonito; muchas veces basta con tenerte cerquita.",
 
-    "Porque quiero celebrar tus logros como si fueran míos, emocionarme con tus buenas noticias y recordarte lo orgullosa que estoy de ti. Quiero verte crecer y alcanzar todo aquello que deseas.",
+    "Quiero celebrar tus logros como si fueran míos, emocionarme con tus buenas noticias y recordarte lo orgullosa que estoy de ti. Quiero verte crecer y alcanzar todo aquello que deseas.",
 
-    "Porque quisiera que nunca dudaras de lo valioso que eres. No tienes que demostrarme nada ni ser perfecto para merecer cariño. Me gustas siendo tú, con tus virtudes y también con tus imperfecciones.",
+    "Quisiera que nunca dudaras de lo valioso que eres. No tienes que demostrarme nada ni ser perfecto para merecer cariño. Me gustas siendo tú, con tus virtudes y también con tus imperfecciones.",
 
-    "Porque me nace cuidarte, consentirte y tener pequeños detalles contigo. Me gusta hacerte sentir querido, así como tú, muchas veces sin darte cuenta, haces que yo también me sienta especial.",
+    "Me nace cuidarte, consentirte y tener pequeños detalles contigo. Me gusta hacerte sentir querido, así como tú, muchas veces sin darte cuenta, haces que yo también me sienta especial.",
 
-    "Y porque, entre tantas personas que existen en el mundo, me alegra muchísimo que nuestros caminos se hayan encontrado. No sé qué nos tenga preparado la vida, pero sí sé que hoy eres alguien a quien quiero muchísimo y cuya felicidad deseo de corazón."
+    "Entre tantas personas que existen en el mundo, me alegra muchísimo que nuestros caminos se hayan encontrado. No sé qué nos tenga preparado la vida, pero sí sé que hoy eres alguien a quien amo muchísimo y cuya felicidad deseo de corazón."
 ];
 
 /* =================================
