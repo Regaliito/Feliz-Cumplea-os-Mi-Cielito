@@ -2172,3 +2172,24 @@ footer span {
 .foto-tres:hover {
     transform: rotate(0deg) scale(1.03);
 }
+
+/* BOTÓN DE MÚSICA DE FONDO */
+
+#boton-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 18px;
+    z-index: 999;
+    padding: 11px 16px;
+    border: 1px solid rgba(220, 45, 65, 0.6);
+    border-radius: 25px;
+    background: #101a30;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(220, 45, 65, 0.25);
+}
+
+#boton-musica:hover {
+    background: #e52e4d;
+}
