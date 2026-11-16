@@ -13,7 +13,19 @@ function entrar() {
         behavior: "smooth"
     });
 
+function entrar() {
+    document.getElementById("inicio").classList.add("oculto");
+
+    document.getElementById("contenido").classList.remove("oculto");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
     iniciarCorazones();
+
+    iniciarMusicaFondo();
 }
 
 
@@ -778,6 +790,12 @@ function abrirSeccion(seccion) {
 
     const contenido = document.getElementById("contenido-dinamico");
 
+   if (seccion === "canciones") {
+    pausarMusicaFondo();
+} else {
+    reanudarMusicaFondo();
+}
+
     if (seccion === "enamore") {
 
         contenido.innerHTML = mostrarRazones(
@@ -910,6 +928,8 @@ function cerrarVentanaVisual() {
     document.body.style.overflow = "auto";
 
     seccionAbierta = false;
+
+    reanudarMusicaFondo();
 
 }
 
@@ -1050,4 +1070,78 @@ function mensajeSorpresa() {
 
     resultado.classList.add("animacion-carta");
 
+}
+
+/* ==========================================
+   MÚSICA DE FONDO
+========================================== */
+
+let musicaFondoActiva = false;
+let estabaSonandoFondo = false;
+
+function iniciarMusicaFondo() {
+
+    const musica = document.getElementById("musica-fondo");
+
+    if (!musica || musicaFondoActiva) return;
+
+    musica.volume = 0.25;
+
+    musica.play().then(() => {
+        musicaFondoActiva = true;
+        actualizarBotonMusica();
+    }).catch(() => {
+        musicaFondoActiva = false;
+        actualizarBotonMusica();
+    });
+}
+
+function alternarMusicaFondo() {
+
+    const musica = document.getElementById("musica-fondo");
+
+    if (musica.paused) {
+        musica.play().then(() => {
+            musicaFondoActiva = true;
+            actualizarBotonMusica();
+        }).catch(() => {});
+    } else {
+        musica.pause();
+        musicaFondoActiva = false;
+        actualizarBotonMusica();
+    }
+}
+
+function actualizarBotonMusica() {
+
+    const boton = document.getElementById("boton-musica");
+    const musica = document.getElementById("musica-fondo");
+
+    if (!boton || !musica) return;
+
+    boton.textContent = musica.paused ? "♫ Activar música" : "♫ Música activada";
+}
+
+function pausarMusicaFondo() {
+
+    const musica = document.getElementById("musica-fondo");
+
+    estabaSonandoFondo = !musica.paused;
+
+    musica.pause();
+
+    actualizarBotonMusica();
+}
+
+function reanudarMusicaFondo() {
+
+    const musica = document.getElementById("musica-fondo");
+
+    if (estabaSonandoFondo) {
+        musica.play().then(() => {
+            actualizarBotonMusica();
+        }).catch(() => {});
+    }
+
+    estabaSonandoFondo = false;
 }
