@@ -2164,3 +2164,11 @@ footer span {
         height: 19px;
     }
 }
+
+.foto-tres {
+    transform: rotate(-2deg);
+}
+
+.foto-tres:hover {
+    transform: rotate(0deg) scale(1.03);
+}
