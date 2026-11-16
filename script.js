@@ -4,16 +4,7 @@
 ================================= */
 
 function entrar() {
-    document.getElementById("inicio").classList.add("oculto");
 
-    document.getElementById("contenido").classList.remove("oculto");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-function entrar() {
     document.getElementById("inicio").classList.add("oculto");
 
     document.getElementById("contenido").classList.remove("oculto");
@@ -246,8 +237,8 @@ function dibujarRecuerdo() {
             <h3>Un día contigo ❤️</h3>
 
             <p class="album-introduccion">
-                Dos fotos que guardan un pedacito de un día
-                que me hizo feliz. Y ojalá sea uno de muchos.
+               Fotos que guardan momentos de dos días que me 
+               hicieron muy feliz. Y ojalá que sean uno de muchos más.
             </p>
 
             <div class="fotos-adrian">
@@ -1133,14 +1124,17 @@ function pausarMusicaFondo() {
     actualizarBotonMusica();
 }
 
+
 function reanudarMusicaFondo() {
 
     const musica = document.getElementById("musica-fondo");
 
-    if (estabaSonandoFondo) {
+    if (estabaSonandoFondo && musicaFondoActiva) {
+
         musica.play().then(() => {
             actualizarBotonMusica();
         }).catch(() => {});
+
     }
 
     estabaSonandoFondo = false;
